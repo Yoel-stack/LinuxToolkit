@@ -17,4 +17,4 @@ echo "$archivo_mas_grande"
 # RECORDAR! El directorio en el que queremos encontrar el archivo mas grande no puede estar en el mismo directorio que el archivo.sh... 
 # Yo lo ejecuto de esta manera, ./namearchivo.sh \ruta\del\directorio 
 
-Listo! 😁
+# Listo! 😁
