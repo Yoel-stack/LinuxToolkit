@@ -1,0 +1,67 @@
+funcionOpciones(){
+echo "Deseas realizar una suma Si o No"
+read opcionSuma
+
+case "$opcionSuma" in
+
+         Si) echo "Elige un primer numero"
+             read numero1
+             echo "Elige un segundo numero"
+             read numero2
+             sum=$(($numero1 + $numero2))
+             echo "El resultado de la suma es de $sum";;
+
+         No) echo "Ok pasamos a la segunda opcion";;
+
+          *) echo "Opcion no valida crack";;
+esac
+
+echo "Desea realizar una resta? Si o No"
+read opcionResta
+
+case "$opcionResta" in
+
+         Si) echo "Elige un primer numero"
+             read numero1
+             echo "Elige un segundo numero"
+             read numero2
+             rest=$(($numero1 - $numero2))
+             echo "El resultado de la resta es de $rest";;
+
+         No) echo "Ok pasamos a la tercer opcion disponible";;
+
+          *) echo "Opcion no valida xd";;
+
+esac
+
+echo "Desea realizar la tercera opcion... Si o No?"
+read opcionNumeroANumero
+
+case "$opcionNumeroANumero" in
+         Si) echo "Elige un primer numero amigo (tiene que ser menor al segundo numero que elijas)"
+             read numero1
+             echo "Elige un segundo numero"
+             read numero2
+
+                if ! [[ "$numero1" =~ ^-?[0-9]+$ ]] || ! [[ "$numero2" =~ ^-?[0-9]+$ ]]; then
+             echo "Por favor, ingresa números válidos."
+             exit 1
+          fi
+
+        # Asegurarse de que numero1 sea menor que numero2
+          if [ "$numero1" -gt "$numero2" ]; then
+             echo "El primer número debe ser menor o igual al segundo número."
+             exit 1
+          fi
+
+             for number in $(seq "$numero1" "$numero2"); do
+             echo "NUMERO: $number"
+                 sleep 0.5
+             done;;
+
+         No) echo "Ok pasamos a la tercer opcion disponible";;
+
+          *) echo "Opcion no valida xd";;
+esac
+}
+funcionOpciones
